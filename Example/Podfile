@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RealmFuse_Example' do
+  pod 'RealmFuse', :path => '../'
+
+  target 'RealmFuse_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
