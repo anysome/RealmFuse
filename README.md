@@ -5,6 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/RealmFuse.svg?style=flat)](https://cocoapods.org/pods/RealmFuse)
 [![Platform](https://img.shields.io/cocoapods/p/RealmFuse.svg?style=flat)](https://cocoapods.org/pods/RealmFuse)
 
+Provide [Fuse](https://github.com/krisk/fuse-swift) search api in Realm
+
+```swift
+var results = realm.objects(PostModel.self).fuseSearch(searchText)
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +28,7 @@ pod 'RealmFuse'
 
 ## Author
 
-anysome, anysome@gmail.com
+Layman, anysome@gmail.com
 
 ## License
 

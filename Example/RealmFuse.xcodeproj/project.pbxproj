@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		74B6BD8444285E2CAEDE1CF4 /* Pods_RealmFuse_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AC73BBDB1E43FC31777C65 /* Pods_RealmFuse_Tests.framework */; };
+		774497A724136C6100B669FA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774497A624136C6100B669FA /* PostModel.swift */; };
 		7D47D68E5D5C028EFEDF1F72 /* Pods_RealmFuse_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D6C6EC1EDD55B994AEA476 /* Pods_RealmFuse_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		245AFB5DD7E5DFCB940DF809 /* RealmFuse.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RealmFuse.podspec; path = ../RealmFuse.podspec; sourceTree = "<group>"; };
+		245AFB5DD7E5DFCB940DF809 /* RealmFuse.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RealmFuse.podspec; path = ../RealmFuse.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		28D6C6EC1EDD55B994AEA476 /* Pods_RealmFuse_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmFuse_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AD2909BF8D5EB010E046B9 /* Pods-RealmFuse_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmFuse_Example.debug.xcconfig"; path = "Target Support Files/Pods-RealmFuse_Example/Pods-RealmFuse_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RealmFuse_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmFuse_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +44,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		74AC73BBDB1E43FC31777C65 /* Pods_RealmFuse_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmFuse_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7708CC36AC95A36CDD972C72 /* Pods-RealmFuse_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmFuse_Example.release.xcconfig"; path = "Target Support Files/Pods-RealmFuse_Example/Pods-RealmFuse_Example.release.xcconfig"; sourceTree = "<group>"; };
-		780192432488120732E41A48 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		774497A624136C6100B669FA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		780192432488120732E41A48 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9C24A85D29D9A80EBFE98DD5 /* Pods-RealmFuse_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmFuse_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RealmFuse_Tests/Pods-RealmFuse_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB003B2325F2640F2E5E33AF /* Pods-RealmFuse_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmFuse_Tests.release.xcconfig"; path = "Target Support Files/Pods-RealmFuse_Tests/Pods-RealmFuse_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C1C87FDB4FA19A1558A837FE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C1C87FDB4FA19A1558A837FE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,6 @@
 				9C24A85D29D9A80EBFE98DD5 /* Pods-RealmFuse_Tests.debug.xcconfig */,
 				AB003B2325F2640F2E5E33AF /* Pods-RealmFuse_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +108,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				774497A624136C6100B669FA /* PostModel.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -227,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -269,11 +272,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RealmFuse_Example/Pods-RealmFuse_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fuse/Fuse.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmFuse/RealmFuse.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fuse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmFuse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				774497A724136C6100B669FA /* PostModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -481,7 +491,7 @@
 				INFOPLIST_FILE = RealmFuse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asfun.demo.RealmFuse-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -496,7 +506,7 @@
 				INFOPLIST_FILE = RealmFuse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.asfun.demo.RealmFuse-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
