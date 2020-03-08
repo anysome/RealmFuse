@@ -7,6 +7,20 @@
 
 Provide [Fuse](https://github.com/krisk/fuse-swift) search api in Realm
 
+Define properities to search
+```swift
+extension PostModel: Fuseable {
+    
+    var fuseProperties: [FuseProperty] {
+        return [
+            FuseProperty(name: "title", weight: 0.34),
+            FuseProperty(name: "content", weight: 0.66)
+        ]
+    }
+}
+```
+
+Run query
 ```swift
 var results = realm.objects(PostModel.self).fuseSearch(searchText)
 ```
