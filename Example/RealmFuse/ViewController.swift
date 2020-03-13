@@ -18,8 +18,11 @@ class ViewController: UIViewController {
     var searchText = ""
     var results = [FuseSearchResult<PostModel>]()
     
-    let boldAttrs: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+    let perfectMatchAttrs: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.backgroundColor: UIColor.red
+    ]
+    let matchAttrs: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.foregroundColor: UIColor.red
     ]
     
@@ -34,7 +37,14 @@ class ViewController: UIViewController {
         sc.hidesNavigationBarDuringPresentation = false
         navBar.items?.first?.searchController = sc
         
+        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Init test data
+        initData()
+    }
+    
+    private func initData() {
         let objects = realm.objects(PostModel.self)
         if objects.count == 0 {
             realm.beginWrite()
@@ -53,7 +63,7 @@ class ViewController: UIViewController {
              ["but the website","lists a number of options allowing you to customise the search for your particular use case"],
              ["I’d recommend","looking through these if you’re planning on using it on a project."],
              ["春节之后", "涛思数据团队全部居家远程办公"],
-             ["因为疫情", "在我们每个人的情绪都被疫情左右了大半个月之后"],
+             ["因为疫情", "在涛我们每个人的情绪都被疫情左右了大半个月之后"],
              ["终于在新年伊始", "TDengine有了第一个好消息，按照计划，我们如期推出ARM 32位版"],
              ["为边缘计算", "嵌入式场景下时序数据的存储、查询、分析与计算提供一强大的工具"],
              ["并且100%开源", "以解决流行的SQLite在该场景下的诸多不足"],
@@ -72,6 +82,13 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func reloadData(_ sender: Any) {
+        try! realm.write {
+            realm.deleteAll()
+        }
+        initData()
+    }
+    
     func doSearch(_ text: String? = nil) {
         if searchText == text {
             return
@@ -82,7 +99,7 @@ class ViewController: UIViewController {
         if searchText.isEmpty {
             results.removeAll()
         } else {
-            results = realm.objects(PostModel.self).fuseSearch(searchText)
+            results = realm.objects(PostModel.self).fuseSearch(searchText, location: 1, distance: 800, threshold: 0.3)
         }
         tableView.reloadData()
     }
@@ -111,7 +128,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     .map(Range.init)
                     .map(NSRange.init)
                     .forEach {
-                        attributedTitle.addAttributes(boldAttrs, range: $0)
+                        if $0.length == self.searchText.count {
+                            attributedTitle.addAttributes(perfectMatchAttrs, range: $0)
+                        } else {
+                            attributedTitle.addAttributes(matchAttrs, range: $0)
+                        }
                 }
             }
             if key == "content" {
@@ -119,7 +140,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     .map(Range.init)
                     .map(NSRange.init)
                     .forEach {
-                        attributedContent.addAttributes(boldAttrs, range: $0)
+                        if $0.length == self.searchText.count {
+                            attributedContent.addAttributes(perfectMatchAttrs, range: $0)
+                        } else {
+                            attributedContent.addAttributes(matchAttrs, range: $0)
+                        }
                 }
             }
         }

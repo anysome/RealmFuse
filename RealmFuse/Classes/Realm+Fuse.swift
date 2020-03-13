@@ -43,8 +43,8 @@ public typealias FuseSearchResult<Element: Fuseable & Object> = (
 
 extension Fuseable where Self: Object {
     
-    public func fuseSearch(_ text: String) -> FuseSearchResult<Self> {
-        let fuse = Fuse()
+    public func fuseSearch(_ text: String, location: Int = 0, distance: Int = 1000, threshold: Double = 0.4, maxPatternLength: Int = 32, isCaseSensitive: Bool = false) -> FuseSearchResult<Self> {
+        let fuse = Fuse(location: location, distance: distance, threshold: threshold, maxPatternLength: maxPatternLength, isCaseSensitive: isCaseSensitive)
         let pattern = fuse.createPattern(from: text)
         
         var totalScore = 0.0
@@ -72,8 +72,8 @@ extension Fuseable where Self: Object {
 
 extension Results where Element: Fuseable & Object{
     
-    public func fuseSearch(_ text: String) -> [FuseSearchResult<Element>] {
-        let fuse = Fuse()
+    public func fuseSearch(_ text: String, location: Int = 1, distance: Int = 1000, threshold: Double = 0.4, maxPatternLength: Int = 32, isCaseSensitive: Bool = false) -> [FuseSearchResult<Element>] {
+        let fuse = Fuse(location: location, distance: distance, threshold: threshold, maxPatternLength: maxPatternLength, isCaseSensitive: isCaseSensitive)
         let pattern = fuse.createPattern(from: text)
         var collectionResult = [FuseSearchResult<Element>]()
         
