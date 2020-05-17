@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         if searchText.isEmpty {
             results.removeAll()
         } else {
-            results = realm.objects(PostModel.self).fuseSearch(searchText, location: 1, distance: 800, threshold: 0.3)
+            results = realm.objects(PostModel.self).fuseSearch(searchText, location: 1, distance: 800, threshold: 0.3, withSort: false)
         }
         tableView.reloadData()
     }

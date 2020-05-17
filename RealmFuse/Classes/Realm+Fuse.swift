@@ -72,7 +72,8 @@ extension Fuseable where Self: Object {
 
 extension Results where Element: Fuseable & Object{
     
-    public func fuseSearch(_ text: String, location: Int = 1, distance: Int = 1000, threshold: Double = 0.4, maxPatternLength: Int = 32, isCaseSensitive: Bool = false) -> [FuseSearchResult<Element>] {
+    public func fuseSearch(_ text: String, location: Int = 1, distance: Int = 1000, threshold: Double = 0.4, maxPatternLength: Int = 32,
+                           isCaseSensitive: Bool = false, withSort: Bool = true) -> [FuseSearchResult<Element>] {
         let fuse = Fuse(location: location, distance: distance, threshold: threshold, maxPatternLength: maxPatternLength, isCaseSensitive: isCaseSensitive)
         let pattern = fuse.createPattern(from: text)
         var collectionResult = [FuseSearchResult<Element>]()
@@ -100,6 +101,10 @@ extension Results where Element: Fuseable & Object{
         })
         // force filter to compute
         let _ = lazyCollection.count
-        return collectionResult.sorted { $0.score < $1.score }
+        if withSort {
+            return collectionResult.sorted { $0.score < $1.score }
+        } else {
+            return collectionResult
+        }
     }
 }
