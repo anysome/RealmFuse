@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RealmFuse'
-  s.version          = '0.1.2'
+  s.version          = '0.2.0'
   s.summary          = 'Use Fuse with Realm'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Fuse search for Realm object
   s.source           = { :git => 'https://github.com/anysome/RealmFuse.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'RealmFuse/Classes/**/*'
   
